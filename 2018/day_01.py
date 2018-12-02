@@ -15,6 +15,6 @@ while result_freq not in result_freqs_seen:
 	result_freq += freqs[i % len(freqs)]
 	i += 1
 
-print('part 2 solution: %s' % result_freq)
+print('part 2 solution: '+ str(result_freq))
 print('part 2 runtime: %s sec' % (time.time() - start_time))
 print()
