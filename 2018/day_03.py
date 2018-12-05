@@ -15,7 +15,7 @@ counts = collections.Counter([square for squares in squares_covered.values() for
 
 print()
 print('part 1 solution: '+ str(len([count for count in counts.values() if count>1])))
-print('part 1 runtime: %s sec' % (time.time()-start_time))
+print('part 1 runtime: %s sec' % (time.time() - start_time))
 print()
 
 start_time = time.time()
@@ -28,6 +28,6 @@ for id_number, squares in squares_covered.items():
 			break
 	if winner_found:
 		print('part 2 solution: '+ id_number)
-		print('part 2 runtime: %s sec' % (time.time()-start_time))
+		print('part 2 runtime: %s sec' % (time.time() - start_time))
 		print()
 		exit()
