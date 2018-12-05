@@ -4,13 +4,21 @@ def adjacent_sum(i,j):
 	global grid
 	grid[i,j] = grid[i,j+1] + grid[i,j-1] + grid[i+1,j] + grid[i+1,j+1] + grid[i+1,j-1] + grid[i-1,j] + grid[i-1,j+1] + grid[i-1,j-1]
 
+def move(step, movement_size):
+	global grid, threshold, done
+	while step <= movement_size:
+		adjacent_sum(i,j)
+			if grid[i,j] > threshold:
+				done = True
+				return
+			step += 1
+
 dimension = int(input('how many rows in the numpy array? '))
 threshold = int(input('quit after what threshold number? '))
 
 start_time = time.time()
-
 grid = np.zeros(shape=(dimension, dimension))
-i, j = (dimension-1)//2, (dimension-1)//2
+i = j = (dimension-1)//2
 grid[i,j] = 1
 
 done = False
