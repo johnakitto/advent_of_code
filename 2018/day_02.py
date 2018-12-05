@@ -10,7 +10,7 @@ for box_id in box_ids:
 	thrice += 1 if 3 in counts else 0
 
 print()
-print('part 1 solution: %s ' % (twice * thrice))
+print('part 1 solution: '+ str(twice * thrice))
 print('part 1 runtime: %s sec' % (time.time() - start_time))
 print()
 
