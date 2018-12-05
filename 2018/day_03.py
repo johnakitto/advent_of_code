@@ -1,14 +1,15 @@
 import time, collections
 start_time = time.time()
 
-with open('day_03.txt', 'r') as designs:
-	squares_covered = {}
-	for design in designs:
-		components = design.split()
-		id_number, details = components[0][1:], components[2:4]
-		a, b = int(details[0].split(',')[0]), int(details[0].split(',')[1][:-1])
-		c, d = int(details[1].split('x')[0]), int(details[1].split('x')[1])
-		squares_covered[id_number] = [(x,y) for x in range(a,a+c) for y in range(b,b+d)]
+designs = [design.strip('\n') for design in open('day_03.txt', 'r').readlines()]
+
+squares_covered = {}
+for design in designs:
+	components = design.split()
+	id_number, details = components[0][1:], components[2:4]
+	a, b = int(details[0].split(',')[0]), int(details[0].split(',')[1][:-1])
+	c, d = int(details[1].split('x')[0]), int(details[1].split('x')[1])
+	squares_covered[id_number] = [(x,y) for x in range(a,a+c) for y in range(b,b+d)]
 
 counts = collections.Counter([square for squares in squares_covered.values() for square in squares])
 
