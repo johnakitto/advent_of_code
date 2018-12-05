@@ -1,7 +1,7 @@
 import time, numpy as np
 from math import sqrt, ceil
 
-def move(step_size, i_or_j, plus_or_minus_one, step=1):
+def move_and_sum(step_size, i_or_j, plus_or_minus_one, step=1):
 	global i, j, n, grid, start_time
 	while step <= step_size:
 		if i_or_j == 'i':
@@ -34,8 +34,8 @@ grid[i,j] = 1
 
 for step_size in range(1, dimension-2):
 	if step_size % 2 == 1:
-		move(step_size, 'j', 1)
-		move(step_size, 'i', -1)
+		move_and_sum(step_size, 'j', 1)
+		move_and_sum(step_size, 'i', -1)
 	else:
-		move(step_size, 'j', -1)
-		move(step_size, 'i', 1)
+		move_and_sum(step_size, 'j', -1)
+		move_and_sum(step_size, 'i', 1)
