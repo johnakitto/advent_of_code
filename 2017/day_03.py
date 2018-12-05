@@ -23,7 +23,7 @@ deviation_from_axis = lambda n, layer: abs((layer-1) - ((n-2) % (2*layer)))
 
 print()
 print('steps from center: '+ str(layer(n) + deviation_from_axis(n, layer(n))))
-print('runtime %s sec' % (time.time() - start_time))
+print('runtime: %s sec' % (time.time() - start_time))
 print()
 
 start_time = time.time()
