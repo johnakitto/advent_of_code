@@ -30,4 +30,3 @@ for id_number, squares in squares_covered.items():
 		print('part 2 runtime: %s sec' % (time.time()-start_time))
 		print()
 		exit()
-
