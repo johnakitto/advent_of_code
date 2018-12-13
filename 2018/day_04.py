@@ -68,6 +68,3 @@ print('part 1 solution: '+ str(int(sleepiest_guard) * sleepiest_guards_sleepiest
 print('part 2 solution: '+ str(int(consistent_sleeper) * consistent_sleepers_sleepiest_minute))
 print('overall runtime: %s sec' % (time.time() - start_time))
 print()
-
-
-
