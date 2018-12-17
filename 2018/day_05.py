@@ -34,7 +34,7 @@ print()
 start_time = time.time()
 shortest_polymer_length = len(og_polymer)
 for l in set(og_polymer.upper()):
-	test_polymer = re.sub('['+l+chr(ord(l)+32)+']', '', og_polymer)
+	test_polymer = re.sub('['+l+l.lower()+']', '', og_polymer)
 	test_polymer_length = len(reacted_polymer(test_polymer))
 	if test_polymer_length < shortest_polymer_length:
 		shortest_polymer_length = test_polymer_length
