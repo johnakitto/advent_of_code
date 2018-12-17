@@ -3,11 +3,11 @@ start_time = time.time()
 
 og_polymer = open('day_05.txt', 'r').readline().strip('\n')
 
-# recursion fails because you exceed recursion depth
-# def recursive_reacted_polymer(polymer):
-# 	for i in range(len(polymer)-1):
-# 		if polymer[i].lower()==polymer[i+1].lower():
-# 			return polymer_reaction(polymer[:i] + polymer[i+2:])
+# # recursion fails because you exceed recursion depth
+# def reacted_polymer(start_i, polymer):
+# 	for i in range(start_i, len(polymer)-1):
+# 		if abs(ord(polymer[i]) - ord(polymer[i+1])) == 32:
+# 			return reacted_polymer(max(0, i-1), polymer[:i] + polymer[i+2:])
 # 	return polymer
 
 def reacted_polymer(polymer):
