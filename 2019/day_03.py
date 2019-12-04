@@ -2,7 +2,6 @@ import time
 start_time = time.time()
 
 wire_paths = [wire.strip('\n').split(',') for wire in open('day_03.txt', 'r').readlines()]
-
 x_direction = {'R': 1, 'L': -1, 'U': 0, 'D':  0}
 y_direction = {'R': 0, 'L':  0, 'U': 1, 'D': -1}
 
