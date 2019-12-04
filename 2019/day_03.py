@@ -3,24 +3,20 @@ start_time = time.time()
 
 wire_paths = [wire.strip('\n').split(',') for wire in open('day_03.txt', 'r').readlines()]
 
-step_direction = {'R': 1, 'L': -1, 'U': 1, 'D': -1}
+x_direction = {'R': 1, 'L': -1, 'U': 0, 'D':  0}
+y_direction = {'R': 0, 'L':  0, 'U': 1, 'D': -1}
 
-def coordinates(wire_path):
+def coordinates(wire_path, x=0, y=0, total_steps=0):
 
 	coordinates = {}
-	x = y = total_steps = 0
 	for segment in wire_path:
-		letter, step_size = segment[0], int(segment[1:])
-		if letter in ('R', 'L'):
-			for i in range(1, step_size+1):
-				coordinates[total_steps+i] = (x+(step_direction[letter]*i), y)
-			x += step_direction[letter] * step_size
-			total_steps += step_size
-		else:
-			for j in range(1, step_size+1):
-				coordinates[total_steps+j] = (x, y+(step_direction[letter]*j))
-			y += step_direction[letter] * step_size
-			total_steps += step_size
+		letter = segment[0]
+		step_size = int(segment[1:])
+		for step in range(1, step_size+1):
+			coordinates[total_steps+step] = (x+(x_direction[letter]*step), y+(y_direction[letter]*step))
+		x += x_direction[letter] * step_size
+		y += y_direction[letter] * step_size
+		total_steps += step_size
 
 	return coordinates
 
