@@ -1,8 +1,6 @@
 import time
 start_time = time.time()
 
-# Very efficient algorithm
-
 def password_valid(number, care_about_groups=False):
 
 	counter = 0
@@ -60,6 +58,7 @@ while password <= last_password:
 		if password_valid(password, care_about_groups=True):
 			valid_passwords_no_groups += 1
 
+	# Skip huge chunks of non-increasing candidate passwords
 	password += 1
 	digits = [int(i) for i in str(password)]
 	if digits[-1] == 0:
