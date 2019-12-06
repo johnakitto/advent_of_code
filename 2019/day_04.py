@@ -22,6 +22,7 @@ def password_valid(number, care_about_groups=False):
 	return password_valid
 
 def reset_bounds(first_password, last_password):
+	''' e.g. 152085, 670283 --> 155555, 669999 '''
 
 	for password in first_password, last_password:
 
